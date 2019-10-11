@@ -18,6 +18,12 @@ let smurfs = [
     age: 200,
     height: '5cm',
     id: 0
+  },
+  {
+    name: 'Mark',
+    age: 582,
+    height: '3cm',
+    id: 1
   }
 ];
 server.get('/smurfs', (req, res) => {
@@ -83,3 +89,4 @@ server.listen(port, err => {
   if (err) console.log(err);
   console.log(`server is listening on port ${port}`);
 });
+

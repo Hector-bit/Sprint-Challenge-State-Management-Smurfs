@@ -14,7 +14,7 @@ const SmurfInfo = props => {
     return <h2>Loading Smurfs...</h2>;
   }
 
-  console.log(props)
+  // console.log(props)
 
   return (
     <div>

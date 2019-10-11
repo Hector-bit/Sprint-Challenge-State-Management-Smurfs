@@ -1,15 +1,16 @@
 import axios from 'axios';
+import { Server } from 'https';
 
 // export const types = {
 //   ADD_ITEM: "ADD_ITEM",
 //   DELETE_ITEM: "DELETE_ITEM"
 // };
 
-export const addItem = name => {
-  console.log(name);
+export const addItem = (name, age, height) => {
+  console.log(name, age, height);
   return {
     type: ADD_ITEM,
-    payload: name
+    payload: (name),
   };
 };
 

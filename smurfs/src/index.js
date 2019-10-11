@@ -15,6 +15,7 @@ import rootReducer from './reducer';
 import './styles.css';
 
 import SmurfInfo from './components/SmurfInfo';
+import SmurfForm from './components/SmurfForm';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
@@ -26,7 +27,8 @@ function App() {
   return (
     <div className="App">
       <h1>Smurf Village</h1>
-      <SmurfInfo />
+      <SmurfForm/>
+      <SmurfInfo/>
     </div>
   );
 }

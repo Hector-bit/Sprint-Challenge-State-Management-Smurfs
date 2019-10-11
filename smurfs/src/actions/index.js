@@ -1,11 +1,6 @@
 import axios from 'axios';
 import { Server } from 'https';
 
-// export const types = {
-//   ADD_ITEM: "ADD_ITEM",
-//   DELETE_ITEM: "DELETE_ITEM"
-// };
-
 export const addItem = (name, age, height) => {
   console.log(name, age, height);
   return {
@@ -19,6 +14,10 @@ export const ADD_ITEM = 'ADD_ITEM';
 export const START_FETCHING = 'START_FETCHING';
 export const FETCH_SUCCESS = 'FETCH_SUCCESS';
 export const FETCH_FAILURE = 'FETCH_FAILURE';
+export const ADDING_POST_SUCCESS = "ADDING_POST_SUCCESS";
+export const ADDING_POST_FAILED = "ADDING_POST_FAILED";
+
+const POST_API = "http://localhost:3333/smurfs";
 
 export const fetchFacts = () => dispatch => {
 
@@ -33,3 +32,21 @@ export const fetchFacts = () => dispatch => {
       dispatch({ type: FETCH_SUCCESS, payload: res.data })))
     .catch(err => dispatch({ type: FETCH_FAILURE, payload: err.response }));
 };
+
+export const addPost = (name, age, height) => async dispatch => {
+  console.log(name, age, height)
+	const res = await axios.post(POST_API, {
+    name: name,
+    age: age,
+    height: height,
+	});
+
+	if (res.status === 201) {
+		const newRes = await axios.get(POST_API);
+    console.log(newRes)
+		dispatch({
+			type: ADDING_POST_SUCCESS,
+			payload: name, age, height
+		});
+	}
+}

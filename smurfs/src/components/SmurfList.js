@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import TodoItem from "./TodoItem";
+import TodoItem from "./SmurfItem";
 
 const TodoList = props => {
   return (

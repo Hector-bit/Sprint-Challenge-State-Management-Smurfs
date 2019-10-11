@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
+import { Fact } from './Fact';
 
 import { addItem } from "../actions";
+import { addPost } from "../actions";
+import { Server } from "https";
 
 const TodoForm = props => {
-    console.log(props)
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
   const [height, setHeight] = useState("");
@@ -12,11 +14,12 @@ const TodoForm = props => {
 
   
   return (
+
     <div>
       <input value={name} placeholder="name" onChange={e => setName(e.target.value)} />
       <input value={age} placeholder="age" onChange={e => setAge(e.target.value)} />
       <input value={height} placeholder="height" onChange={e => setHeight(e.target.value)} />
-      <button onClick={e => props.addItem(name, age, height)}>Add</button>
+      <button onClick={e => props.addPost(name, age, height)}>Add</button>
     </div>
   );
 };
@@ -31,5 +34,5 @@ const mapStateToProps = state => {
 
 export default connect(
     mapStateToProps,
-  { addItem }
+  { addPost }
 )(TodoForm);

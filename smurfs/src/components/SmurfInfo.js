@@ -17,7 +17,7 @@ const SmurfInfo = props => {
   // console.log(props)
 
   return (
-    <div>
+    <div className='smurfs'>
       {props.error && <p>{props.error}</p>}
       {props.smurfs.map(fact => (
         

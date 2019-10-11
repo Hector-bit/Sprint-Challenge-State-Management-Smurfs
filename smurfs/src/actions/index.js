@@ -1,6 +1,20 @@
 import axios from 'axios';
 
+// export const types = {
+//   ADD_ITEM: "ADD_ITEM",
+//   DELETE_ITEM: "DELETE_ITEM"
+// };
+
+export const addItem = name => {
+  console.log(name);
+  return {
+    type: ADD_ITEM,
+    payload: name
+  };
+};
+
 // action types
+export const ADD_ITEM = 'ADD_ITEM';
 export const START_FETCHING = 'START_FETCHING';
 export const FETCH_SUCCESS = 'FETCH_SUCCESS';
 export const FETCH_FAILURE = 'FETCH_FAILURE';

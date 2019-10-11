@@ -12,9 +12,9 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import rootReducer from './reducer';
 
-// import './styles.css';
+import './styles.css';
 
-import DogPictures from './components/SmurfInfo';
+import SmurfInfo from './components/SmurfInfo';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
@@ -26,7 +26,7 @@ function App() {
   return (
     <div className="App">
       <h1>Smurf Village</h1>
-      <DogPictures />
+      <SmurfInfo />
     </div>
   );
 }

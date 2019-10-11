@@ -1,7 +1,7 @@
 import { START_FETCHING, FETCH_SUCCESS, FETCH_FAILURE } from '../actions';
 
 const initialState = {
-  dogPictures: [],
+  smurfs: [],
   isFetching: false,
   error: ''
 };
@@ -19,7 +19,7 @@ const reducer = (state = initialState, action) => {
         ...state,
         isFetching: false,
         error: '',
-        dogPictures: action.payload
+        smurfs: action.payload
       };
     case FETCH_FAILURE:
       return {

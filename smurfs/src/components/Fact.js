@@ -7,6 +7,7 @@ const Fact = props => {
       <h2>{props.fact.name}</h2>
       <p>Age: {props.fact.age}</p>
       <p>Height: {props.fact.height}</p>
+      <p>ID: {props.fact.id}</p>
     </div>
   );
 };

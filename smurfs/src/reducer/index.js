@@ -1,4 +1,4 @@
-import { START_FETCHING, FETCH_SUCCESS, FETCH_FAILURE, ADD_ITEM } from '../actions';
+import { START_FETCHING, FETCH_SUCCESS, FETCH_FAILURE, ADD_SMURF, ADDING_POST_SUCCESS } from '../actions';
 
 const initialState = {
   smurfs: [],
@@ -10,21 +10,10 @@ const initialState = {
 
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_ITEM:
-      let newState = { ...state };
-      let smurfs = newState.smurfs;
-
-      smurfs = [
-        ...smurfs,
-        {
-          id: Date.now(),
-          name: action.payload
-        }
-      ];
-
+    case ADD_SMURF:
       return {
-        ...newState,
-        smurfs
+        ...state,
+        smurfs: action.payload
       };
     case START_FETCHING:
       return {

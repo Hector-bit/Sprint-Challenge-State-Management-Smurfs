@@ -4,13 +4,13 @@ import { Server } from 'https';
 export const addItem = (name, age, height) => {
   console.log(name, age, height);
   return {
-    type: ADD_ITEM,
+    type: ADD_SMURF,
     payload: (name),
   };
 };
 
 // action types
-export const ADD_ITEM = 'ADD_ITEM';
+export const ADD_SMURF = 'ADD_SMURF';
 export const START_FETCHING = 'START_FETCHING';
 export const FETCH_SUCCESS = 'FETCH_SUCCESS';
 export const FETCH_FAILURE = 'FETCH_FAILURE';
@@ -33,20 +33,22 @@ export const fetchFacts = () => dispatch => {
     .catch(err => dispatch({ type: FETCH_FAILURE, payload: err.response }));
 };
 
-export const addPost = (name, age, height) => async dispatch => {
+ export const addPost = (name, age, height) => async dispatch => {
+
   console.log(name, age, height)
 	const res = await axios.post(POST_API, {
     name: name,
     age: age,
     height: height,
-	});
+   })
 
-	if (res.status === 201) {
-		const newRes = await axios.get(POST_API);
-    console.log(newRes)
-		dispatch({
-			type: ADDING_POST_SUCCESS,
-			payload: name, age, height
-		});
-	}
+   console.log(res)
+   dispatch({
+     type: ADD_SMURF,
+     payload: res.data
+   })
 }
+
+ export const deletePost = (id) => {
+
+ }
